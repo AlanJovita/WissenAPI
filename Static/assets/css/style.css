@@ -1,0 +1,83 @@
+html {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    font-family: calibri;
+  }
+
+  body {
+    
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 30vw;
+      height: 100vh;
+      background-color: lightgray;
+      /* cor de fundo da página */
+      border-radius: 10px;
+    }
+
+    fieldset {
+      display: flex;
+      flex-direction: column;
+      width: 300px;
+      border-radius: 10px;
+      padding: 15px;
+      background-color: #8d8989;
+      color: #ffffff;
+    }
+
+    fieldset>div {
+      display: flex;
+      flex-direction: column;
+      margin-top: 10px;
+      color: #a54c4c;
+
+    }
+
+    label {
+      font-size: 14px;
+      font-weight: bold;
+
+    }
+
+    input {
+      font-size: 16px;
+      font-weight: bold;
+      margin-top: 0px;
+      border-radius: 10px;
+      border: 1px solid #555;
+      color: #4169E1;
+    }
+
+    .botao {
+      font-size: 15px;
+      font-weight: bold;
+      margin-top: 5px;
+      border-radius: 10px;
+      background-color: #0e7ae6;
+      border-color: #0e7ae6;
+      color: #ffffff;
+
+    }
+
+    h3 {
+      font-family: 'Roboto', sans-serif;
+      /* adicionado */
+    }
+
+    .consulta {
+      display: flex;
+      font-size: 15px;
+      font-weight: bold;
+      flex-direction: grid;
+      width: 250px;
+      border-radius: 10px;
+      padding: 15px;
+      background-color: #8d8989;
+      color: #f0e5e5;
+    }
