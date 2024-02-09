@@ -30,7 +30,7 @@ app.register_blueprint(index)
 app.config['JSON_SORT_KEYS']=False
 app.config['JSON_AS_ASCII'] = False
 
-app.run(debug=True)
+#app.run(debug=True)
 
 # def register_blueprints(app):
 #     # Obtém a lista de arquivos no diretório 'routes'

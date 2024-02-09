@@ -1,0 +1,159 @@
+Traceback (most recent call last):
+  File "/home/prem7348/api.wissen/passenger_wsgi.py", line 8, in <module>
+    wsgi = imp.load_source('wsgi', 'app.py')
+  File "/opt/alt/python310/lib64/python3.10/imp.py", line 172, in load_source
+    module = _load(spec)
+  File "<frozen importlib._bootstrap>", line 719, in _load
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "app.py", line 7, in <module>
+    from Routes.usuario import usuario
+  File "/home/prem7348/api.wissen/Routes/usuario.py", line 2, in <module>
+    from Controller.usuarioBLL import UsuarioBLL
+  File "/home/prem7348/api.wissen/Controller/usuarioBLL.py", line 2, in <module>
+    from Data.bd import *
+  File "/home/prem7348/api.wissen/Data/bd.py", line 1, in <module>
+    import mysql.connector
+ModuleNotFoundError: No module named 'mysql'
+Traceback (most recent call last):
+  File "/home/prem7348/api.wissen/passenger_wsgi.py", line 8, in <module>
+    wsgi = imp.load_source('wsgi', 'app.py')
+  File "/opt/alt/python310/lib64/python3.10/imp.py", line 172, in load_source
+    module = _load(spec)
+  File "<frozen importlib._bootstrap>", line 719, in _load
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "app.py", line 7, in <module>
+    from Routes.usuario import usuario
+  File "/home/prem7348/api.wissen/Routes/usuario.py", line 2, in <module>
+    from Controller.usuarioBLL import UsuarioBLL
+  File "/home/prem7348/api.wissen/Controller/usuarioBLL.py", line 2, in <module>
+    from Data.bd import *
+  File "/home/prem7348/api.wissen/Data/bd.py", line 1, in <module>
+    import mysql.connector
+ModuleNotFoundError: No module named 'mysql'
+[UID:1424][922940] Child process with pid: 922961 was killed by signal: 15, core dumped: no
+Traceback (most recent call last):
+  File "/home/prem7348/api.wissen/passenger_wsgi.py", line 8, in <module>
+    wsgi = imp.load_source('wsgi', 'app.py')
+  File "/opt/alt/python310/lib64/python3.10/imp.py", line 172, in load_source
+    module = _load(spec)
+  File "<frozen importlib._bootstrap>", line 719, in _load
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "app.py", line 7, in <module>
+    from Routes.usuario import usuario
+  File "/home/prem7348/api.wissen/Routes/usuario.py", line 2, in <module>
+    from Controller.usuarioBLL import UsuarioBLL
+  File "/home/prem7348/api.wissen/Controller/usuarioBLL.py", line 2, in <module>
+    from Data.bd import *
+  File "/home/prem7348/api.wissen/Data/bd.py", line 1, in <module>
+    import mysql.connector
+ModuleNotFoundError: No module named 'mysql'
+[UID:1424][922940] Child process with pid: 922968 was killed by signal: 15, core dumped: no
+Mysql Error SQL:|select * from usuario where login = 'andre' and senha = '123''| Exception: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''123''' at line 1
+Mysql Error SQL:|select * from usuario where login = 'andre' and senha = '321''| Exception: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''321''' at line 1
+Mysql Error SQL:|select * from usuario where login = 'andre' and senha = '321''| Exception: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near ''321''' at line 1
+Mysql Error SQL:|select * from usuario where login = 'admin' and senha = 'admin'| Exception: 1146 (42S02): Table 'prem0867_clientes.usuario' doesn't exist
+Mysql Error SQL:|select * from usuario where login = 'admin' and senha = 'admin'| Exception: 1146 (42S02): Table 'prem0867_clientes.usuario' doesn't exist
+Mysql Error SQL:|select * from usuario where login = 'admin' and senha = 'admin'| Exception: 1146 (42S02): Table 'prem0867_clientes.usuario' doesn't exist
+Mysql Error SQL:|select * from usuario where login = 'admin' and senha = 'admin'| Exception: 1146 (42S02): Table 'prem0867_clientes.usuario' doesn't exist
+Mysql Error SQL:|select * from usuario where login = 'admin' and senha = 'admin'| Exception: 1146 (42S02): Table 'prem0867_clientes.usuario' doesn't exist
+Mysql Error SQL:|select * from usuario where login = ''admin'' and senha = ''admin''| Exception: 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'admin'' and senha = ''admin''' at line 1
+Mysql Error SQL:|select * from usuario where login = 'admin' and senha = 'admin'| Exception: 1146 (42S02): Table 'prem0867_clientes.usuario' doesn't exist
+Mysql Error SQL:|select * from usuario where login = 'admin' and senha = 'admin'| Exception: 1146 (42S02): Table 'prem0867_clientes.usuario' doesn't exist
+Mysql Error SQL:|select * from usuario where login = 'admin' and senha = 'admin'| Exception: 1146 (42S02): Table 'prem0867_clientes.usuario' doesn't exist
+Mysql Error SQL:|select * from usuario where login = 'admin' and senha = 'admin'| Exception: 1146 (42S02): Table 'prem0867_clientes.usuario' doesn't exist
+Mysql Error SQL:|select * from usuario where login = 'admin' and senha = 'admin'| Exception: 1146 (42S02): Table 'prem0867_clientes.usuario' doesn't exist
+Mysql Error SQL:|select * from usuario where login = 'admin' and senha = 'admin'| Exception: 1146 (42S02): Table 'prem0867_clientes.usuario' doesn't exist
+Mysql Error SQL:|select * from usuario where login = 'admin' and senha = 'admin'| Exception: 1146 (42S02): Table 'prem0867_clientes.usuario' doesn't exist
+Mysql Error SQL:|select * from usuario where login = 'admin' and senha = 'admin'| Exception: 1146 (42S02): Table 'prem0867_clientes.usuario' doesn't exist
+Mysql Error SQL:|select * from usuario where login = 'admin' and senha = 'admin'| Exception: 1146 (42S02): Table 'prem0867_clientes.usuario' doesn't exist
+Mysql Error SQL:|select * from usuario where login = 'admin' and senha = 'admin'| Exception: 1146 (42S02): Table 'prem0867_clientes.usuario' doesn't exist
+Mysql Error SQL:|select * from usuario where login = 'admin' and senha = 'admin'| Exception: 1146 (42S02): Table 'prem0867_clientes.usuario' doesn't exist
+Mysql Error SQL:|select * from usuario where login = 'admin' and senha = 'admin'| Exception: 1146 (42S02): Table 'prem0867_clientes.usuario' doesn't exist
+Mysql Error SQL:|select * from usuario where login = 'admin' and senha = 'admin'| Exception: 1146 (42S02): Table 'prem0867_clientes.usuario' doesn't exist
+Traceback (most recent call last):
+  File "/home/prem7348/api.wissen/passenger_wsgi.py", line 8, in <module>
+    wsgi = imp.load_source('wsgi', 'app.py')
+  File "/opt/alt/python310/lib64/python3.10/imp.py", line 172, in load_source
+    module = _load(spec)
+  File "<frozen importlib._bootstrap>", line 719, in _load
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "app.py", line 33, in <module>
+    app.run(debug=True)
+  File "/home/prem7348/virtualenv/api.wissen/3.10/lib/python3.10/site-packages/flask/app.py", line 607, in run
+    cli.show_server_banner(self.debug, self.name)
+  File "/home/prem7348/virtualenv/api.wissen/3.10/lib/python3.10/site-packages/flask/cli.py", line 724, in show_server_banner
+    click.echo(f" * Serving Flask app '{app_import_path}'")
+  File "/home/prem7348/virtualenv/api.wissen/3.10/lib/python3.10/site-packages/click/utils.py", line 318, in echo
+    file.write(out)  # type: ignore
+BrokenPipeError: [Errno 32] Broken pipe
+ * Serving Flask app 'wsgi'
+ * Serving Flask app 'wsgi'
+ * Debug mode: on
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[33mPress CTRL+C to quit[0m
+ * Restarting with stat
+Traceback (most recent call last):
+  File "/home/prem7348/api.wissen/passenger_wsgi.py", line 8, in <module>
+    wsgi = imp.load_source('wsgi', 'app.py')
+  File "/opt/alt/python310/lib64/python3.10/imp.py", line 172, in load_source
+    module = _load(spec)
+  File "<frozen importlib._bootstrap>", line 719, in _load
+  File "<frozen importlib._bootstrap>", line 688, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 883, in exec_module
+  File "<frozen importlib._bootstrap>", line 241, in _call_with_frames_removed
+  File "app.py", line 33, in <module>
+    app.run(debug=True)
+  File "/home/prem7348/virtualenv/api.wissen/3.10/lib/python3.10/site-packages/flask/app.py", line 607, in run
+    cli.show_server_banner(self.debug, self.name)
+  File "/home/prem7348/virtualenv/api.wissen/3.10/lib/python3.10/site-packages/flask/cli.py", line 724, in show_server_banner
+    click.echo(f" * Serving Flask app '{app_import_path}'")
+  File "/home/prem7348/virtualenv/api.wissen/3.10/lib/python3.10/site-packages/click/utils.py", line 318, in echo
+    file.write(out)  # type: ignore
+BrokenPipeError: [Errno 32] Broken pipe
+ * Serving Flask app 'wsgi'
+ * Serving Flask app 'wsgi'
+ * Debug mode: on
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+ * Serving Flask app 'wsgi'
+ * Serving Flask app 'wsgi'
+ * Debug mode: on
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+ * Serving Flask app 'wsgi'
+ * Serving Flask app 'wsgi'
+ * Debug mode: on
+Address already in use
+Port 5000 is in use by another program. Either identify and stop that program, or start the server with a different port.
+ * Serving Flask app 'wsgi'
+ * Serving Flask app 'wsgi'
+ * Debug mode: on
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[33mPress CTRL+C to quit[0m
+ * Restarting with stat
+ * Serving Flask app 'wsgi'
+ * Serving Flask app 'wsgi'
+ * Debug mode: on
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[33mPress CTRL+C to quit[0m
+ * Restarting with stat
+ * Serving Flask app 'wsgi'
+ * Serving Flask app 'wsgi'
+ * Debug mode: on
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[33mPress CTRL+C to quit[0m
+ * Restarting with stat
+ * Serving Flask app 'wsgi'
+ * Serving Flask app 'wsgi'
