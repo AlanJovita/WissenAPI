@@ -1,155 +1,88 @@
-import mysql.connector
+from appwrite import query
+from appwrite.client import Client
+from appwrite.services.databases import Databases
+from appwrite.services.storage import Storage
+from appwrite.id import ID
+from enum import Enum
 from Model.log import Log
 
-host = '177.234.148.10'
-user = 'prem0867_user_wissen'
-senha='h@gIh%S9v-O&'
-bd='prem0867_wissen'
+class Table(Enum):
+    Obra='65e8b328f0121bbe4444'
 
-def open_connect():
+databaseId = '65dfa13ca9b5455eaf4a'
 
+client=Client()
+
+client.set_endpoint('http://195.35.18.156/v1')
+client.set_project('657093958a9218d22389')
+
+client.set_key('d97bb8d06410a6f27f69be358bd46d5e11c48cc9104965e0248013ea70ab8ec6691b5d35b71424cf86848e00293dfb69dbcff63e1ca9c556317bb9e5fd0b8648e8624c86de7f76560dc66914d1f7363f613c1324b88c54487cafcf2d9b4f9e894ca772230cf80ff588b2e56af36848866869169c779baf0283befd8f026e5902')
+
+databases = Databases(client)
+
+def createFile(file)->dict:
     try:
-        con = mysql.connector.connect(host=host,user=user,password=senha,database=bd)
-        if con.is_connected():
-           return con
-        else:
-           return None
-    except mysql.connector.Error as erro:
-        Log.Registrar("Mysql Error! Falha ao conectar no banco: {}".format(erro))
-        return None 
-    except:
+        storage = Storage(client)
+        result= storage.create_file(file=file)
+        return result
+    except Exception as e:
+        Log.Registrar(f"Appwrite Error:|{e}|")
         return None
 
-def open_connect_product():
-
+def createDocument(table:Table,document:dict)->dict:
     try:
-        con = mysql.connector.connect(host=host,user='prem0867_produtos',password='k!od094T70L6',database='prem0867_produtos')
-        if con.is_connected():
-           return con
+        result= databases.create_document(databaseId,table.value,ID.unique(),data=document)
+        return result
+    except Exception as e:
+         Log.Registrar(f"Appwrite Error:|{e}|")
+         return None
+        
+def updateDocument(table:Table,documentId:str,document:dict)->dict:
+    try:
+        result= databases.update_document(databaseId,table.value,documentId,document)
+        return result
+    except Exception as e:
+        Log.Registrar(f"Appwrite Error:|{e}|")
+        return None
+
+def deleteDocument(table:Table,documentId:str)->str:
+    try:
+        result= databases.delete_document(databaseId,table.value,documentId)
+        return result["$id"]
+    except Exception as e:
+        Log.Registrar(f"Appwrite Error:|{e}|")
+        return None
+
+def getDocument(table:Table,documentId:str)->dict:
+    try:
+        result= databases.get_document(databaseId,table.value,documentId)
+        return result
+    except Exception as e:
+        Log.Registrar(f"Appwrite Error:|{e}|")
+        return None
+
+def getDocumentByField(table:Table,filter:list=[])->dict:
+    try:
+        if filter == []:
+            result= databases.list_documents(databaseId,table.value)
         else:
-           return None
-    except mysql.connector.Error as erro:
-        Log.Registrar("Mysql Error! Falha ao conectar no banco: {}".format(erro))
-        return None 
-    except:
+            result= databases.list_documents(databaseId,table.value,filter)
+        return result["documents"][0]
+    except Exception as e:
+        Log.Registrar(f"Appwrite Error:|{e}|")
         return None
 
-def close_connect(cursor,con):
-    if con.is_connected():
-        cursor.close()
-        con.close()
-        
+def listDocuments(table:Table,filter:list=[])->list:
+    try:
+        if filter == []:
+            result= databases.list_documents(databaseId,table.value)
+        else:
+            result= databases.list_documents(databaseId,table.value,filter)
 
-def executar(sql)->bool:
- try:
-    con = open_connect()
-    cursor = con.cursor()
-    cursor.execute(sql)
-    con.commit()
-    return True
- except Exception as e:
-    Log.Registrar(f"Mysql Error SQL:|{sql}| Exception: {e}")
-    return False
- finally:
-    close_connect(cursor,con)
-
-def selectAll(sql):
-
-    con = open_connect()
-
-    if (con == None):
+        return result["documents"]    
+    except Exception as e:
+        return Log.Registrar(f"Appwrite Error:|{e}|")
         return None
-    else:   
-        
-        cursor = con.cursor(buffered=True)
-
-        try:
-            cursor.execute(sql)
-        
-            return cursor.fetchall()
-            
-        except Exception as e:
-            Log.Registrar(f"Mysql Error SQL:|{sql}| Exception: {e}")
-            return None
-        finally:
-            close_connect(cursor,con)
-
-
-def selectOne(sql):
-    
-    con = open_connect()
-    if (con == None):
-        return None
-    else:   
-        
-        cursor = con.cursor(buffered=True)
-        try:
-            cursor.execute(sql)
-        
-            result = cursor.fetchone()
-            
-            if result==None:
-                return None
-            else:        
-                return result[0]
-        except Exception as e:
-            Log.Registrar(f"Mysql Error SQL:|{sql}| Exception: {e}")
-            return None
-        finally:
-            close_connect(cursor,con)
-
-def selectId(sql):
-
-    con = open_connect()
-    if (con == None):
-        return None
-    else:   
-        con.autocommit=False
-        cursor = con.cursor()
-
-        try:
-
-            cursor.execute(sql)
-            cursor=None           
-            last_inserted_id=cursor.lastrowid
-
-            con.commit()
-
-            return last_inserted_id
-        
-        except mysql.connector.Error as err:
-            con.rollback()
-            Log.Registrar(f"Mysql Error SQL:|{sql}| Exception: {err}")
-        except Exception as e:
-            con.rollback()
-            Log.Registrar(f"Mysql Error SQL:|{sql}| Exception: {e}")
-        finally:
-           close_connect(cursor,con)
-
-def selectProduct(sql):
-    
-    con = open_connect_product()
-    if (con == None):
-        return None
-    else:   
-        
-        cursor = con.cursor(buffered=True)
-
-        try:
-            cursor.execute(sql)
-
-            result = cursor.fetchone()
-            
-            if result==None:
-                return None
-            else:        
-                return result
-        
-        except Exception as e:
-            Log.Registrar(f"Mysql Error SQL:|{sql}| Exception: {e}")
-            return None
-        finally:
-            close_connect(cursor,con)
         
     
 

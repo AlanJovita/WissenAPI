@@ -1,0 +1,54 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Tabelas {% endblock %} 
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+    <h1>Cadastrar Relatório</h1>
+    <form method="POST">
+        <label for="nome_cliente">Nome do Cliente:</label>
+        <input type="text" id="nome_cliente" name="cliente" required><br><br>
+        <label for="whatsapp">WhatsApp:</label>
+        <input type="text" id="whatsapp" name="whatsapp" required><br><br>
+        <label for="valor">Valor:</label>
+        <input type="text" id="valor" name="valor" required><br><br>
+        <label for="valor_pago">Valor Pago:</label>
+        <input type="text" id="valor_pago" name="valor_pago" required><br><br>
+        <label for="valor_adicional">Valor Adicional:</label>
+        <input type="text" id="valor_adicional" name="valor_adicional"><br><br>
+        <label for="valor_desconto">Valor de Desconto:</label>
+        <input type="text" id="valor_desconto" name="valor_desconto"><br><br>
+        <input type="submit" value="Cadastrar">
+    </form>
+
+    <h1>Upload de Imagem</h1>
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="file" accept="image/*">
+        <input type="submit" value="Enviar">
+    </form>
+
+    <h2>Relatórios Cadastrados</h2>
+    <table border="1">
+        <tr>
+            <th>Nome do Cliente</th>
+            <th>WhatsApp</th>
+            <th>Valor</th>
+            <th>Valor Pago</th>
+            <th>Valor Adicional</th>
+            <th>Valor de Desconto</th>
+        </tr>
+        {% for relatorio in relatorios %}
+        <tr>
+            <td>{{ relatorio['cliente'] }}</td>
+            <td>{{ relatorio['whatsapp'] }}</td>
+            <td>{{ relatorio['valor'] }}</td>
+            <td>{{ relatorio['valor_pago'] }}</td>
+            <td>{{ relatorio['valor_adicional'] }}</td>
+            <td>{{ relatorio['valor_desconto'] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+{% endblock content %}

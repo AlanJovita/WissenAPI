@@ -6,6 +6,7 @@ sys.path.insert(0,os.path.dirname(__file__))
 from flask import Flask
 from Routes.usuario import usuario
 from Routes.index import index
+from Routes.checklist import checklist
 
 from config import config_dict
 
@@ -26,11 +27,12 @@ app = Flask(__name__,template_folder="View")
 app.config.from_object(app_config)
 app.register_blueprint(usuario)
 app.register_blueprint(index)
+app.register_blueprint(checklist)
 
 app.config['JSON_SORT_KEYS']=False
 app.config['JSON_AS_ASCII'] = False
 
-#app.run(debug=True)
+app.run(debug=True)
 
 # def register_blueprints(app):
 #     # Obtém a lista de arquivos no diretório 'routes'
